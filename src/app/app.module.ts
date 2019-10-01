@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChartsComponent } from './charts/charts.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { StoreModule } from '@ngrx/store';
+import { AnnualDataReducer } from './store/reducers/annual-data.reducer';
+import { MonthlyDataReducer } from './store/reducers/monthly-data.reducer';
+import { ChartsComponent } from './components/charts/charts.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +16,12 @@ import { HeaderComponent } from './header/header.component';
     ChartsComponent,
     HomeComponent,
     HeaderComponent,
-    // Urls
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ annualData: AnnualDataReducer, monthlyData: MonthlyDataReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

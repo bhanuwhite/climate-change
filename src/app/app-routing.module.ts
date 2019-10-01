@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChartsComponent } from './charts/charts.component';
-import { HomeComponent } from './home/home.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { HomeComponent } from './components/home/home.component';
 
 /* defining routes */
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'/home',
-    pathMatch:'full'
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: 'home',
